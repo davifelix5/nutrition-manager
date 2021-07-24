@@ -44,7 +44,7 @@ export default function FoodBox({ name, calories, imageUrl, foodInfo, setFoodInf
       <div className="media-right">
         <div className="field has-addons">
           <div className="control">
-            <input className="input" type="number" value={quantity} onChange={e => setQuantity(e.target.value)} />
+            <input className="input" min="1" type="number" value={quantity} onChange={e => setQuantity(e.target.value)} />
           </div>
           <div className="control">
             <button className="button is-info" onClick={addFood}>
