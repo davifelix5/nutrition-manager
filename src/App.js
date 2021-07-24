@@ -13,6 +13,13 @@ function App() {
   const [foods, setFoods] = useState(initialFoods.map(food => ({...food, show: true})))
   const [showForm, setShowForm] = useState(false)
   const [foodInfo, setFoodInfo] = useState([])
+  const [timeOutId, setTimeOutId] = useState(null)
+
+  function debounceFilter(filter, time) {
+    clearTimeout(timeOutId)
+    const timeout = setTimeout(() => filterFoods(filter), time)
+    setTimeOutId(timeout)
+  }
 
   function filterFoods(filter) {
     const newFoods = foods.map(food => {
@@ -31,7 +38,7 @@ function App() {
       <h1 className="title is-1">IronNutrition</h1>
       <div className="field">
         <div className="control">
-          <input type="text" className="input" onChange={(e) => filterFoods(e.target.value)} />
+          <input type="text" className="input" onChange={e => debounceFilter(e.target.value, 500)} />
         </div>
       </div>
       <div className="columns">
