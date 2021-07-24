@@ -56,7 +56,7 @@ function App() {
          <FoodInfo foodInfo={foodInfo} setFoodInfo={setFoodInfo} />
         </div>
       </div>
-      <button className="button is-link" onClick={() => setShowForm(true)}>Nova comida +</button>
+      <button className="button is-link" onClick={() => setShowForm(true)}>Add food +</button>
     </div>
   );
 }
