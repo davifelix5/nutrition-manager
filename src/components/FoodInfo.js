@@ -11,9 +11,9 @@ export default function FoodInfo({ foodInfo, setFoodInfo }) {
   }
   
   return (
-    <div className="box">
-      <h2 className="title is-3">Today's foods</h2>
-      <ul style={{listStyle: 'inside'}}>
+    <>
+      <h2 className="subtitle">Today's foods</h2>
+      <ul style={{marginBottom: 10}}>
         {foodInfo.map(food => (
           <li key={food.name}>
             {food.quantity} {food.name} = {food.calories * food.quantity} cal
@@ -24,6 +24,6 @@ export default function FoodInfo({ foodInfo, setFoodInfo }) {
         ))}
       </ul>
       Total = {totalCalories}
-    </div>
+    </>
   )
 }

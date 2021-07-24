@@ -35,11 +35,9 @@ function App() {
   return (
     <div className="box">
       {showForm && <FoodForm setFoods={setFoods} foods={foods} setShow={setShowForm} />}
-      <h1 className="title is-1">IronNutrition</h1>
-      <div className="field">
-        <div className="control">
-          <input type="text" className="input" onChange={e => debounceFilter(e.target.value, 500)} />
-        </div>
+      <h1 className="title">IronNutrition</h1>
+      <div style={{marginBottom: 30}}>
+        <input type="text" className="input" onChange={e => debounceFilter(e.target.value, 500)} />
       </div>
       <div className="columns">
         <div className="column">
@@ -54,7 +52,7 @@ function App() {
             /> : null
           })}
         </div>
-        <div className="column">
+        <div className="column content">
          <FoodInfo foodInfo={foodInfo} setFoodInfo={setFoodInfo} />
         </div>
       </div>
