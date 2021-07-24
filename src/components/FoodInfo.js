@@ -23,7 +23,7 @@ export default function FoodInfo({ foodInfo, setFoodInfo }) {
           </li>
         ))}
       </ul>
-      Total = {totalCalories}
+      <strong>Total = {totalCalories} cal</strong>
     </>
   )
 }
