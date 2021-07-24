@@ -23,6 +23,7 @@ export default function FoodBox({ name, calories, imageUrl, foodInfo, setFoodInf
     }
     
     setFoodInfo(newFoods)
+    setQuantity(1)
   }
 
   return (
